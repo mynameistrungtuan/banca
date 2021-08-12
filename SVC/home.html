@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Slide Down Box Menu with jQuery and CSS3" />
+	<meta name="keywords" content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails" />
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="home.css" type="text/css" media="screen" />
+	<style>
+		body {
+			background: #333 url(bg.jpg) repeat top left;
+			font-family: Arial;
+		}
+
+		span.reference {
+			position: fixed;
+			left: 10px;
+			bottom: 10px;
+			font-size: 12px;
+		}
+
+		span.reference a {
+			color: #aaa;
+			text-transform: uppercase;
+			text-decoration: none;
+			text-shadow: 1px 1px 1px #000;
+			margin-right: 30px;
+		}
+
+		span.reference a:hover {
+			color: #ddd;
+		}
+
+		ul.sdt_menu {
+			margin-top: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="content">
+			<ul id="sdt_menu" class="sdt_menu">
+				<li>
+					<a href="http://127.0.0.1:5501/home.html">
+						<img src="images/2.jpg" alt="" />
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Trang chủ</span>
+							<span class="sdt_descr">Giới thiệu</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/1.jpg" alt="" />
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Mua bán</span>
+							<span class="sdt_descr">Đa dạng</span>
+						</span>
+					</a>
+					<div class="sdt_box">
+						<a href="http://127.0.0.1:5501/chim.html">Chim cảnh</a>
+						<a href="http://127.0.0.1:5501/cay.html">Cây cảnh</a>
+						<a href="http://127.0.0.1:5501/ca.html">Cá cảnh</a>
+						<a href="#">Khác</a>
+					</div>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/3.jpg" alt="" />
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Đăng bài</span>
+							<span class="sdt_descr">Phong phú về sản phẩm</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/4.jpg" alt="" />
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Hội thi</span>
+							<span class="sdt_descr">Những bức ảnh đẹp</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/5.jpg" alt="" />
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Liên hệ</span>
+							<span class="sdt_descr">Liên lạc với chúng tôi</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/6.jpg" alt="" />
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Dịch vụ</span>
+							<span class="sdt_descr">Những dịch vụ hấp dẫn</span>
+						</span>
+					</a>
+					<div class="sdt_box">
+						<a href="#">Quảng cáo</a>
+						<a href="#">Giao hàng</a>
+						<a href="#">Tổ chức giao lưu</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="introduce row">
+			<div class="img col-md-8 col-sm-8">
+				<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img class="d-block w-100" src="images/1.jpg" alt="First slide" height="400">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="images/2.jpg" alt="Second slide" height="400">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="images/3.jpg" alt="Third slide" height="400">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="notification col-md-4 col-sm-4">
+				<div class="note">
+					<div class="text">
+						<b>THÔNG BÁO</b>
+						<div class="line"></div>
+					</div>
+					<div class="noti-content">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, at temporibus? Quis animi quod,
+						dolor perspiciatis ducimus officiis cupiditate necessitatibus neque deleniti excepturi illum,
+						molestiae ipsam debitis harum, quidem ad?
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="fish">
+			<div class="btn-item">
+				<p>CÁ CẢNH</p>
+			</div>
+			<div class="line-item"></div>
+			<div class="fish-item">
+				<ul>
+					<li><a href="#">Cá La Hán</a></li>
+					<li><a href="#">Cá Chép Koi</a></li>
+					<li><a href="#">Cá Betta Fancy</a></li>
+					<li><a href="#">Cá Rồng</a></li>
+					<li><a href="#">Cá Phượng Hoàng</a></li>
+					<li><a href="#">Cá Thần Tiên</a></li>
+					<li><a href="#">Cá Bảy Màu</a></li>
+					<li><a href="#">Cá Vàng</a></li>
+					<li><a href="#">Cá Neon</a></li>
+					<li><a href="#">Khác</a></li>
+				</ul>
+			</div>
+			<div class="fish-box">
+				<div class="fish-img">
+					<img src="images/1.jpg" alt="">
+					<p class="fish-name">Cá Rồng</p>
+					<p class="fish-price">Giá: 1.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/1.jpg" alt="">
+					<p class="fish-name">Cá Rồng</p>
+					<p class="fish-price">Giá: 1.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/1.jpg" alt="">
+					<p class="fish-name">Cá Rồng</p>
+					<p class="fish-price">Giá: 1.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/1.jpg" alt="">
+					<p class="fish-name">Cá Rồng</p>
+					<p class="fish-price">Giá: 1.000.000 VND</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="fish">
+			<div class="btn-item">
+				<p>CÂY CẢNH</p>
+			</div>
+			<div class="line-item"></div>
+			<div class="fish-item">
+				<ul>
+					<li><a href="#">Lộc Vừng</a></li>
+					<li><a href="#">Duối</a></li>
+					<li><a href="#">Linh Sam</a></li>
+					<li><a href="#">Lan Rừng</a></li>
+					<li><a href="#">Phú Quý</a></li>
+					<li><a href="#">Sanh</a></li>
+					<li><a href="#">Bạch Thủy Tiên</a></li>
+					<li><a href="#">Phát Tài</a></li>
+					<li><a href="#">Trúc Mây</a></li>
+					<li><a href="#">Khác</a></li>
+				</ul>
+			</div>
+			<div class="fish-box">
+				<div class="fish-img">
+					<img src="images/2.jpg" alt="">
+					<p class="fish-name">Lộc Vừng</p>
+					<p class="fish-price">Giá: 2.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/2.jpg" alt="">
+					<p class="fish-name">Lộc Vừng</p>
+					<p class="fish-price">Giá: 2.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/2.jpg" alt="">
+					<p class="fish-name">Lộc Vừng</p>
+					<p class="fish-price">Giá: 2.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/2.jpg" alt="">
+					<p class="fish-name">Lộc Vừng</p>
+					<p class="fish-price">Giá: 2.000.000 VND</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="fish">
+			<div class="btn-item">
+				<p>CHIM CẢNH</p>
+			</div>
+			<div class="line-item"></div>
+			<div class="fish-item">
+				<ul>
+					<li><a href="#">Chào Mào</a></li>
+					<li><a href="#">Vành Khuyên</a></li>
+					<li><a href="#">Chích Choè</a></li>
+					<li><a href="#">Sáo</a></li>
+					<li><a href="#">Yến Phụng</a></li>
+					<li><a href="#">Vẹt</a></li>
+					<li><a href="#">Cu Gáy</a></li>
+					<li><a href="#">Sơn Ca</a></li>
+					<li><a href="#">Đại Bàng</a></li>
+					<li><a href="#">Vàng Anh</a></li>
+					<li><a href="#">Khướu</a></li>
+					<li><a href="#">Khác</a></li>
+				</ul>
+			</div>
+			<div class="fish-box">
+				<div class="fish-img">
+					<img src="images/3.jpg" alt="">
+					<p class="fish-name">Chào Mào</p>
+					<p class="fish-price">Giá: 3.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/3.jpg" alt="">
+					<p class="fish-name">Chào Mào</p>
+					<p class="fish-price">Giá: 3.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/3.jpg" alt="">
+					<p class="fish-name">Chào Mào</p>
+					<p class="fish-price">Giá: 3.000.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/3.jpg" alt="">
+					<p class="fish-name">Chào Mào</p>
+					<p class="fish-price">Giá: 3.000.000 VND</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="fish">
+			<div class="btn-item">
+				<p>THUỐC BVTV</p>
+			</div>
+			<div class="line-item"></div>
+			<div class="fish-item">
+				<ul>
+					<li><a href="#">Điều hòa sinh trưởng</a></li>
+					<li><a href="#">Trừ nấm bệnh</a></li>
+					<li><a href="#">Trừ sâu</a></li>
+					<li><a href="#">Trừ côn trùng</a></li>
+					<li><a href="#">Trừ cỏ</a></li>
+					<li><a href="#">Trừ chuột, mối, ốc</a></li>
+					<li><a href="#">Thuốc phụ trợ khác</a></li>
+				</ul>
+			</div>
+			<div class="fish-box">
+				<div class="fish-img">
+					<img src="images/4.jpg" alt="">
+					<p class="fish-name">KAMSU 25L</p>
+					<p class="fish-price">Giá: 30.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/4.jpg" alt="">
+					<p class="fish-name">KAMSU 25L</p>
+					<p class="fish-price">Giá: 30.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/4.jpg" alt="">
+					<p class="fish-name">KAMSU 25L</p>
+					<p class="fish-price">Giá: 30.000 VND</p>
+				</div>
+				<div class="fish-img">
+					<img src="images/4.jpg" alt="">
+					<p class="fish-name">KAMSU 25L</p>
+					<p class="fish-price">Giá: 30.000 VND</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="chat">
+			<button class="open-button" onclick="openForm()">Chat</button>
+
+			<div class="chat-popup" id="myForm">
+				<form action="/action_page.php" class="form-container" style="color: black">
+					<h1>Liên hệ</h1>
+
+					<label for="msg"><b>Chat trực tuyến</b></label>
+					<textarea placeholder="Nhập tin nhắn.." name="msg" required style="color: black"></textarea>
+
+					<button type="submit" class="btn">Gửi</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">Đóng</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Cái này là footer</p>
+		<p>Số điện thoại: 0969442510 - 0789442510</p>
+		<hr>
+		<p>Website với mục đích tạo môi trường mua bán cũng như tổ chức những cuộc thi lành mạnh cho người đam mê trên
+			toàn quốc và mở rộng ra cả nước ngoài.</p>
+		<p>&copy 2019 Bản quyền thuộc về someone.</p>
+	</div>
+
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('#sdt_menu > li').bind('mouseenter', function () {
+				var $elem = $(this);
+				$elem.find('img')
+					.stop(true)
+					.animate({
+						'width': '170px',
+						'height': '170px',
+						'left': '0px'
+					}, 400, 'easeOutBack')
+					.andSelf()
+					.find('.sdt_wrap')
+					.stop(true)
+					.animate({ 'top': '140px' }, 500, 'easeOutBack')
+					.andSelf()
+					.find('.sdt_active')
+					.stop(true)
+					.animate({ 'height': '170px' }, 300, function () {
+						var $sub_menu = $elem.find('.sdt_box');
+						if ($sub_menu.length) {
+							var left = '170px';
+							if ($elem.parent().children().length == $elem.index() + 1)
+								left = '-170px';
+							$sub_menu.show().animate({ 'left': left }, 200);
+						}
+					});
+			}).bind('mouseleave', function () {
+				var $elem = $(this);
+				var $sub_menu = $elem.find('.sdt_box');
+				if ($sub_menu.length)
+					$sub_menu.hide().css('left', '0px');
+
+				$elem.find('.sdt_active')
+					.stop(true)
+					.animate({ 'height': '0px' }, 300)
+					.andSelf().find('img')
+					.stop(true)
+					.animate({
+						'width': '0px',
+						'height': '0px',
+						'left': '85px'
+					}, 400)
+					.andSelf()
+					.find('.sdt_wrap')
+					.stop(true)
+					.animate({ 'top': '25px' }, 500);
+			});
+		});
+	</script>
+
+	<script>
+		function openForm() {
+			document.getElementById("myForm").style.display = "block";
+		}
+
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+		}
+	</script>
+</body>
+
+</html>

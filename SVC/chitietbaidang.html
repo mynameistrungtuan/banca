@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Slide Down Box Menu with jQuery and CSS3" />
+    <meta name="keywords" content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="chitietbaidang.css" type="text/css" media="screen" />
+    <style>
+        body {
+            background: #333 url(bg.jpg) repeat top left;
+            font-family: Arial;
+        }
+
+        span.reference {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            font-size: 12px;
+        }
+
+        span.reference a {
+            color: #aaa;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-shadow: 1px 1px 1px #000;
+            margin-right: 30px;
+        }
+
+        span.reference a:hover {
+            color: #ddd;
+        }
+
+        ul.sdt_menu {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-login">
+            <div class="logo">
+                <a href="#"><img src="http://www.sansvc.vn/vnt_upload/news/09_2014/thumbs/50_logosvc.png" alt=""
+                        width="50" height="50" style="list-style-type: none"> LOGO</a>
+            </div>
+            <div class="login">
+                <i class="fas fa-user-alt" style="font-size: 30px; margin-right: 10px; color: rgb(40, 21, 58)"></i><a
+                    href="#">Đăng nhập</a>
+            </div>
+        </div>
+        <div class="content">
+            <ul id="sdt_menu" class="sdt_menu">
+                <li>
+                    <a href="http://127.0.0.1:5501/home.html">
+                        <img src="images/2.jpg" alt="" />
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Trang chủ</span>
+                            <span class="sdt_descr">Giới thiệu</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/1.jpg" alt="" />
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Mua bán</span>
+                            <span class="sdt_descr">Đa dạng</span>
+                        </span>
+                    </a>
+                    <div class="sdt_box">
+                        <a href="http://127.0.0.1:5501/chim.html">Chim cảnh</a>
+                        <a href="http://127.0.0.1:5501/cay.html">Cây cảnh</a>
+                        <a href="http://127.0.0.1:5501/ca.html">Cá cảnh</a>
+                        <a href="#">Khác</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/3.jpg" alt="" />
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Đăng bài</span>
+                            <span class="sdt_descr">Phong phú về sản phẩm</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/4.jpg" alt="" />
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Hội thi</span>
+                            <span class="sdt_descr">Những bức ảnh đẹp</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/5.jpg" alt="" />
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Liên hệ</span>
+                            <span class="sdt_descr">Liên lạc với chúng tôi</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/6.jpg" alt="" />
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Dịch vụ</span>
+                            <span class="sdt_descr">Những dịch vụ hấp dẫn</span>
+                        </span>
+                    </a>
+                    <div class="sdt_box">
+                        <a href="#">Quảng cáo</a>
+                        <a href="#">Giao hàng</a>
+                        <a href="#">Tổ chức giao lưu</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="find">
+            <form action=""><input type="text" class="search" placeholder="Tìm kiếm"> <button class="icon"><i
+                        class="fas fa-search"></i></button> </form>
+        </div>
+
+        <div class="post-content row">
+            <div class="post-detail col-md-8 col-sm-8">
+                <h4>Những điều cần biết khi chơi cá Rồng</h4>
+                <strong>1. VẢY:</strong>
+                <p>Vảy của loài cá, cũng giống như da của con người, vảy cá Rồng phải đều đặn, ngay hàng thẳng lối mới
+                    được coi là đẹp. Từng chiếc vảy của cá Rồng không được lồi lõm, hoặc không thẳng hàng. Nhất là khi
+                    ánh sáng soi vào phản chiếu màu sắc rực rơ,ä trên vảy không có chấm đen, nhưng nếu có chấm đỏ, theo
+                    quan niệm của người Trung Quốc, đó là điều cát tường của người nuôi.</p>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/vay-ca-rong.jpg" alt="" style="margin-left: 20%; width: 60%">
+                <p>Nhiều người chơi cá Rồng, thường có một quan niệm sai lầm là khi thấy cá thay vảy, trong lòng lo sợ
+                    vảy sẽ không ra trở lại, hoặc có cũng không đẹp bằng lúc trước.
+                    Điều cần biết là trong giai đoạn thay vảy, cá Rồng cũng bị ngứa ngáy, giống như con người bị rách da
+                    và lúc kéo da non vậy. Lúc đó, cá Rồng thường tìm vật cứng để cọ xát, khiến cho vảy non bị biến
+                    dạng. Cách đề phòng trường hợp này là dời khỏi hồ cá tất cả những vật cứng rắn, như non bộ, vỏ sò
+                    ốc, đá sỏi...</p>
+                <p>Trong quá trình vận chuyển cá Rồng, cũng thường làm cho khoảng 50% cá bị tróc vảy. Mức độ tróc vảy
+                    từng con nặng nhẹ thế nào, tùy thuộc vào cách bảo quản của người vận chuyển
+                    Sau hết, một điều mà người yêu thích cá Rồng cần hiểu là, vảy của cá Rồng có bị tróc hay không,
+                    không phải là vấn đề quan trọng. Vấn đề quan trọng là làm thế nào để vảy của nó được rực rỡ hơn, làm
+                    thế nào để vảy được ngay hàng thẳng lối, và sự chăm sóc có đầy đủ, tỉ mỉ không. Như vậy mới là quan
+                    tâm đến lớp vảy đẹp của cá Rồng.</p>
+                <strong>2. RÂU:</strong>
+                <p>Nhiều người chơi cá cảnh rất xem trọng bộ râu của cá Rồng, vì theo quan niệm của người châu Á, râu cá
+                    Rồng cũng như sừng của loài rồng, là biểu tượng cho sự cát tường. Cá Rồng có đủ điều kiện của một
+                    con cá đẹp, nhưng râu không đẹp, sẽ bị giảm mất giá trị thẩm mỹ rất lớn. Một khi râu cá Rồng ngắn
+                    hoặc bị biến dạng, nhìn chung nó sẽ mất vẻ uy nghi.</p>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/rau-ca-rong.jpg" alt="" srcset=""
+                    style="margin-left: 20%; width: 60%">
+                <p>Một cặp râu đẹp phải vừa dài, vừa thẳng, đều nhau. Không được bên dài, bên ngắn. Nhất là màu sắc phải
+                    tương đồng với thân cá. Đó là tiêu chuẩn cho một cặp râu đẹp của cá Rồng.</p>
+                <strong>3. KỲ và ĐUÔI:</strong>
+                <br>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/ky-va-duoi-ca-rong.jpg" alt="" srcset=""
+                    style="margin-left: 20%; width: 60%">
+                <p>Kỳ của cá Rồng cũng giống như tay chân của con người. Đuôi phải to và xòe đều, không dợn sóng. Kỳ
+                    bụng phải to và dài, có độ cong đẹp. Về đuôi, vì tùy theo giống mà có màu sắc khác nhau, nên cũng
+                    phải xét vẻ đẹp về màu sắc, tùy theo từng giống một.</p>
+                <strong>4. MIỆNG:</strong>
+                <br>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/mieng-ca-rong.jpg" alt=""
+                    style="margin-left: 20%; width: 60%">
+                <p>Long ngư có một cái miệng đẹp là khi nó ngậm lại, hàm trên và hàm dưới đều nhau, không có hiện tượng
+                    hàm dưới nhô cao (bị trề môi). Chót hàm dưới không có thịt thừa (do cá thường ma xát vào mặt hồ
+                    kính, nên sinh ra cục thịt thừa này). Phương pháp đề phòng là nuôi trong hồ rộng, để cá có không
+                    gian bơi lội, hoặc đặt máy tạo sóng, để nước lưu động được nhanh hơn</p>
+                <strong>5. MẮT:</strong>
+                <br>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/mat-ca-rong.jpg" alt="" style="margin-left: 20%; width: 60%">
+                <p>Sống trong hoàn cảnh thiên nhiên, cá Rồng thường hoạt động ở tầng mặt để tìm mồi dễ hơn. Nhưng khi
+                    nuôi trong hồ cá cảnh, bốn bên đều trong suốt và nhiều ánh sáng, hoàn cảnh khác hẳn ngoài thiên
+                    nhiên, lại dễ tìm thức ăn, nên nó không cần nhìn lên phía trên để quan sát tìm mồi. Chính sự thay
+                    đổi quán tính này làm cho cá Rồng thuờng có đôi mắt bị xệ, luôn nhìn về phía dưới.</p>
+                <p>Tiêu chuẩn một đôi mắt đẹp của cá Rồng là luôn nhìn thẳng và nằm sát mang, không nhìn xuống, linh
+                    động, tia mắt sáng và có thần, màu sắc hài hòa. Cuối cùng là hai mắt phải cân đối, đều nhau.</p>
+                <strong>6. RĂNG:</strong>
+                <br>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/rang-ca-rong.jpg" alt="" style="margin-left: 20%; width: 60%">
+                <p>Nhiều bạn chơi cá cảnh, đặt nghi vấn là cá Rồng có răng hay không? Thực ra, nó chẳng những có răng mà
+                    còn có cả lưỡi nữa. Nếu chúng ta không quan sát kỹ, sẽ rất khó nhận thấy.
+                    Nhiều bạn nuôi cá Rồng có khi không quan tâm đến răng của cá. Kỳ thực, răng cũng là một yếu tố quan
+                    trọng. Vì có bộ răng tốt, cá bắt mồi, ăn mồi sẽ dễ dàng, lại còn có thể dùng để tự vệ.
+                    Một bộ răng tốt, phải ngay hàng thẳng lối, đều và dày. Nếu răng bị khiếm khuyết, sẽ gây khó khăn cho
+                    cá khi ăn uống.</p>
+                <strong>7. MANG:</strong>
+                <br>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/mang-ca-rong.jpg" alt="" style="margin-left: 20%; width: 60%">
+                <p>Đôi mang cá cũng giống như đôi má của con người phải trơn láng, mịn màng, không bị biến dạng, trầy
+                    xước. Điều quan trọng nhất là nắp mang không bị lật ngược, gây cho cá khó thở và mất vẻ đẹp.</p>
+                <strong>8. HẬU MÔN:</strong>
+                <br>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/hau-mon-ca-rong.jpg" alt=""
+                    style="margin-left: 20%; width: 60%">
+                <P>Một con cá Rồng khỏe mạnh, hậu môn của nó nằm sát vào da bụng, khó nhận thấy được. Nhưng khi cá có
+                    vấn đề, như bị bệnh, hậu môn sẽ lồi ra rõ rệt.
+                    Tuy nhiên, cũng có trường hợp ngoại lệ, như trong thời kỳ cá đẻ, hậu môn của nó cũng nhô ra.</P>
+                <strong>9. BƠI LỘI:</strong>
+                <br>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/boi-loi-ca-rong.jpg" alt=""
+                    style="margin-left: 20%; width: 60%">
+                <p>Dáng bơi lội của cá Rồng cũng là một trong những yếu tố quan trọng. Dù cá có đẹp, nhưng dáng bơi
+                    không đẹp, cũng bị giảm giá trị.
+                    Dáng bơi đẹp là luôn giữ thân mình thẳng với mặt nước. Khi bơi, kỳ vây đều xòe ra. Cặp râu chỉa
+                    thẳng về phía trước. Khi cá xoay mình, trông mềm mại, nhẹ nhàng.
+                    Với tất cả những tiêu chuẩn về nét đẹp như trình bày ở phần trên, thực ra khó tìm thấy trong thực
+                    tế. Nếu có một con cá Rồng nào phù hợp với tất cả những tiêu chuẩn đó, thì giá trị của nó không có
+                    gì sánh kịp.</p>
+
+                <h5>*11 Tiêu chuẩn đẹp của cá Rồng</h5>
+                <p>1. Màu sắc: Tùy theo từng giống, nhưng màu sắc bao giờ cũng phải rực rỡ </p>
+                <p>2. Thể hình: Chiều dài, chiều rộng phải cân đối với nhau; kỳ, vây phải hoàn chỉnh.</p>
+                <p>3. Vảy: Phải ngay hàng thẳng lối, chiếu sáng. Quan trọng nhất là vảy to, đều, không bị biến dạng.</p>
+                <p>4. Râu: Dài và thẳng, hai râu thật đều nhau, màu phải giống thân cá.</p>
+                <p>5. Kỳ, vây: To và xòe đều, không bị quăn.</p>
+                <p>6. Mang: Khép sát thân, phần mềm phải xếp tự nhiên. Nấp mang chiếu sáng.</p>
+                <p>7. Đôi mắt: Hai mắt bằng nhau, không bị xệ (nhìn xuống phía dưới), không bị kéo mây, sáng và có thần.
+                </p>
+                <p>8. Miệng: Khép kín, hàm dưới không nhô cao hơn hàm trên.</p>
+                <p>9. Răng: Phải đều đặn, không bị khiếm khuyết.</p>
+                <p>10. Hậu môn: Không lồi ra.</p>
+                <p>11. Bơi lội: Khi bơi thân thẳng, nhẹ nhàng và thường hoạt động ở tầng mặt của hồ cá.</p>
+                </p>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/hong-long-indo.jpg" alt=""
+                    style="margin-left: 20%; width: 60%">
+                <p style="text-align: center; font-size: 13px;">Hồng Long Indonesia, dài 8cm</p>
+
+                <h5>*Những điều cần lưu ý khi mua cá Rồng</h5>
+                <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một con cá
+                    đẹp. Sau đó, có thể kết hợp với sở thích cá nhân, đặt ra tiêu chuẩn cho một con cá Rồng mình muốn
+                    chọn mua.</p>
+                <p>Vì giống cá Rồng đẹp, quý, giá bán thường rất cao, cho nên khi nuôi phải chuyên tâm, tỉ mỉ, phải có
+                    đủ điều kiện khách quan. Nếu điều kiện không tốt, sẽ ảnh hưởng trực tiếp đến việc trưởng thành của
+                    cá.</p>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/hong-long-indo2.jpg" alt=""
+                    style="margin-left: 20%; width: 60%">
+                <p style="text-align: center; font-size: 13px;">Hồng Long Indonesia</p>
+
+                <p>Nếu chúng ta mua lầm một con cá Rồng, chẳng những lãng phí tiền bạc, mà còn bực bội về mặt tinh thần.
+                    Muốn nuôi một con cá Rồng từ lúc còn bé, đến khi trưởng thành và xinh đẹp, không phải là chuyện
+                    nhanh chóng và đơn giản.</p>
+                <p>Nếu bạn chưa hiểu gì về cá Rồng, tốt nhất nên suy nghĩ kỹ, tìm mua loại cá đã trưởng thành là hơn. Vì
+                    cá trưởng thành, về các mặt đã định hình, không thay đổi nhiều nữa.</p>
+                <p>Có nhiều bạn không hiểu thế nào là tiêu chuẩn vẻ đẹp của một con cá Rồng, mà chỉ lấy giá bán của nó
+                    để làm thước đo, nên rất dễ bị lầm.</p>
+                <p>Theo thời giá ở thị trường cá cảnh tại Đài Loan, một con Hồng Long còn bé, dài khoảng 10cm, có giá
+                    bán sai biệt nhau từ 20 ngàn đến 50 ngàn Đài tệ. Như vậy đủ thấy, một con Hồng Long đẹp sẽ có giá
+                    trị cao như thế nào.</p>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/kim-long-qua-boi-malay.jpg" alt=""
+                    style="margin-left: 20%; width: 60%">
+                <p style="text-align: center; font-size: 13px;">Kim Long Quá Bối Malaysia</p>
+
+                <p>Sau cùng, khi chọn mua Hồng Long, còn một điều cần lưu ý: Ấy là, với trình độ khoa học ngày nay,
+                    nhiều thứ sản phẩm hóa học mới được bán ra thị trường giúp người buôn cá cảnh có thể dùng những thứ
+                    hóa chất, làm cho màu đỏ của con Hồng Long rực rỡ thêm, bằng cách đặt trên mặt hồ cá một bóng đèn
+                    soi thực vật nghiêng về màu đỏ, hoặc cho cá ăn loại hóa chất có sắc tố đỏ, thì một thời gian sau, cá
+                    sẽ trổ màu đỏ quyến rũ khách mua.</p>
+                <img src="https://cacanhhonganh.com.vn/images/tin-tuc/kim-long-hong-vy-indo.jpg" alt=""
+                    style="margin-left: 20%; width: 60%">
+                <p style="text-align: center; font-size: 13px;">Kim Long Hồng Vĩ Indonesia</p>
+                <p>Mặc dù bạn chọn mua cá ở cửa hiệu chuyên bán cá cảnh, nhưng có khi bản thân người đứng bán lại không
+                    có kiến thức chuyên môn, dễ dẫn đến chuyện bán lầm, mua lầm, không sao đề phòng được. Vậy tốt nhất,
+                    khi đi mua bạn nên dẫn theo một người đã có kinh nghiệm nuôi cá Rồng, sẽ tránh được mọi chuyện không
+                    hay xảy ra.</p>
+
+                <p style="float: right">SONG MỘC - TUYẾT ANH</p>
+                <p style="float: right">(Bài này tác giả đã đăng trên Nguyệt san Văn Hóa số tháng 3 và tháng 4, năm 1995
+                    dưới bút danh PHƯƠNG NGHI, có bổ sung tư liệu mới)</p>
+                <p style="float: right">Theo baoanhdatmui.vn</p>
+            </div>
+            <div class="post-another col-md-4 col-sm-4">
+                <h5 style="color: blanchedalmond; font-size: 25px; text-align: center; margin-bottom: 20px;">Những bài
+                    viết được quan tâm nhiều nhất</h5>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="detail">
+                        <h5>Những điều cần biết khi chơi cá Rồng</h5>
+                        <p>Trước khi chọn mua cá Rồng, nên đi tham quan những giống cá Rồng đẹp để hiểu thế nào là một
+                            con cá đẹp. Sau đó, có thể kết hợp với sở thích cá nhân <a href="#">xem thêm</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="more"><i class="far fa-comment"></i>  Đăng nhập để bình luận</button>
+
+        <div class="comments">
+            <div class="cmt-name">
+                <div class="name">
+                    <a href="#">Thành Đạt</a>
+                </div>
+                <div class="cmt">
+                    <p>Cá này có dễ nuôi không mọi người?</p>
+                </div>
+                <div class="like">
+                    <button class="like-un"><i class="far fa-thumbs-up"></i>   Like</button>
+                    <button class="reply">Reply</button>
+                    <div class="two" style="margin-left: 5%; margin-right: 5%">
+                        <hr>
+                        <div class="name">
+                            <a href="#">Thanh Cường</a>
+                        </div>
+                        <div class="cmt" style="margin-bottom: 0rem">
+                            <p>Khá khó nuôi nhưng biết cách chăm sóc là ok bạn ạ!</p>
+                        </div>
+                        <button class="like-un" style="margin-top: -10px;"><i class="far fa-thumbs-up"></i>  Like</button>
+                        <hr>
+                        <div class="name">
+                            <a href="#">Anybody</a>
+                        </div>
+                        <input type="text" placeholder="Nhập bình luận" style="display: block; width: 100%; margin-top: 15px; padding: 10px; border-radius: 10px;">
+                    </div>
+                </div>
+
+                <hr>
+                <div class="name">
+                    <a href="#">Thanh Kha</a>
+                </div>
+                <div class="cmt">
+                    <p>Cá này mình nuôi được hơn 1 năm rồi vẫn khỏe bạn nhé!</p>
+                </div>
+                <div class="like">
+                    <button class="like-un"><i class="far fa-thumbs-up"></i>   Like</button>
+                    <button class="reply">Reply</button>
+                    <div class="one" style="margin-left: 5%; margin-right: 5%">
+                        <hr>
+                        <div class="name">
+                            <a href="#">Anybody</a>
+                        </div>
+                        <input type="text" placeholder="Nhập bình luận" style="display: block; width: 90%; margin-top: 15px; padding: 10px; border-radius: 10px;">
+                    </div>
+                </div>
+
+                <hr>
+                    <div class="name">
+                        <a href="#">Anybody</a>
+                    </div>
+                    <input type="text" placeholder="Nhập bình luận" style="display: block; width: 99%; margin-top: 15px; padding: 10px; border-radius: 10px;">
+            </div>
+        </div>
+
+        <div class="chat">
+            <button class="open-button" onclick="openForm()">Chat</button>
+
+            <div class="chat-popup" id="myForm">
+                <form action="/action_page.php" class="form-container" style="color: black">
+                    <h1>Liên hệ</h1>
+
+                    <label for="msg"><b>Chat trực tuyến</b></label>
+                    <textarea placeholder="Nhập tin nhắn.." name="msg" required style="color: black"></textarea>
+
+                    <button type="submit" class="btn">Gửi</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Đóng</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#sdt_menu > li').bind('mouseenter', function () {
+                var $elem = $(this);
+                $elem.find('img')
+                    .stop(true)
+                    .animate({
+                        'width': '170px',
+                        'height': '170px',
+                        'left': '0px'
+                    }, 400, 'easeOutBack')
+                    .andSelf()
+                    .find('.sdt_wrap')
+                    .stop(true)
+                    .animate({ 'top': '140px' }, 500, 'easeOutBack')
+                    .andSelf()
+                    .find('.sdt_active')
+                    .stop(true)
+                    .animate({ 'height': '170px' }, 300, function () {
+                        var $sub_menu = $elem.find('.sdt_box');
+                        if ($sub_menu.length) {
+                            var left = '170px';
+                            if ($elem.parent().children().length == $elem.index() + 1)
+                                left = '-170px';
+                            $sub_menu.show().animate({ 'left': left }, 200);
+                        }
+                    });
+            }).bind('mouseleave', function () {
+                var $elem = $(this);
+                var $sub_menu = $elem.find('.sdt_box');
+                if ($sub_menu.length)
+                    $sub_menu.hide().css('left', '0px');
+
+                $elem.find('.sdt_active')
+                    .stop(true)
+                    .animate({ 'height': '0px' }, 300)
+                    .andSelf().find('img')
+                    .stop(true)
+                    .animate({
+                        'width': '0px',
+                        'height': '0px',
+                        'left': '85px'
+                    }, 400)
+                    .andSelf()
+                    .find('.sdt_wrap')
+                    .stop(true)
+                    .animate({ 'top': '25px' }, 500);
+            });
+        });
+    </script>
+
+    <script>
+        var acc = document.getElementsByClassName("reply");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var one = this.nextElementSibling;
+                if (one.style.maxHeight) {
+                    one.style.maxHeight = null;
+                } else {
+                    one.style.maxHeight = one.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <script>
+        var acc = document.getElementsByClassName("like-un");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+            });
+        }
+    </script>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+</body>
